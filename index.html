@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Gimenez Sergio</title>
+    <link rel="stylesheet" href="./css/style.css" />
+  </head>
+  <body>
+    <!-- Estrellas -->
+    <div class="estrella" style="top: 10%; left: 20%"></div>
+    <div class="estrella" style="top: 50%; left: 60%"></div>
+    <div class="estrella" style="top: 75%; left: 40%"></div>
+    <div class="estrella" style="top: 20%; left: 35%"></div>
+    <div class="estrella" style="top: 70%; left: 10%"></div>
+    <div class="estrella" style="top: 90%; left: 80%"></div>
+
+    <!-- Header con logo y navegación -->
+    <header>
+      <div class="logo">
+        <h1></h1>
+      </div>
+      <nav>
+        <button onclick="mostrarSeccion('Inicio')">Inicio</button>
+        <button onclick="mostrarSeccion('Proyectos')">Proyectos</button>
+        <button onclick="mostrarSeccion('Habilidades')">Habilidades</button>
+        <button onclick="mostrarSeccion('Contacto')">Contacto</button>
+      </nav>
+    </header>
+
+    <div class="mar">
+      <!-- Sección de inicio -->
+      <div class="card" id="cardInicio">
+        <h3>🌊 ¡Bienvenido!</h3>
+        <p>Soy un desarrollador y es un gusto encontrarte</p>
+      </div>
+
+      <!-- Sección de proyectos (inicialmente oculta) -->
+      <div class="card" id="cardProyectos">
+        <h3>🚀 Proyectos</h3>
+        <p>Estos son algunos de mis proyectos recientes.</p>
+      </div>
+
+      <!-- Sección de habilidades (inicialmente oculta) -->
+      <div class="card" id="cardHabilidades">
+        <h3>🛠 Habilidades</h3>
+        <p>Aquí están las tecnologías que manejo.</p>
+      </div>
+
+      <!-- Sección de contacto (inicialmente oculta) -->
+      <div class="card" id="cardContacto">
+        <h3>📬 Contacto</h3>
+        <p>.</p>
+      </div>
+
+      <div class="ola ola1"></div>
+      <div class="ola ola2"></div>
+      <div class="ola ola3"></div>
+    </div>
+
+    <script src="./js/main.js"></script>
+    <!-- <script src="./js/proyectar.js"></script> -->
+  </body>
+</html>

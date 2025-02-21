@@ -1,0 +1,186 @@
+/* Fondo de noche */
+body {
+  margin: 0;
+  height: 100vh;
+  background: linear-gradient(to bottom, #151f49, #474d78);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+/* Contenedor del agua */
+.mar {
+  position: absolute;
+  width: 100%;
+  height: 50%;
+  bottom: 0;
+  overflow: hidden; 
+}
+
+/* Olas de noche */
+.ola {
+  position: absolute;
+  width: 200%;
+  height: 100%;
+  bottom: 0;
+  left: -50%;
+  border-radius: 50%;
+  opacity: 0.9;
+}
+
+.ola1 {
+  background: #35427c;
+  height: 30%;
+  animation: olas 6s infinite ease-in-out;
+}
+.ola2 {
+  background: #1a2d59;
+  height: 35%;
+  opacity: 0.8;
+  animation: olas 7s infinite ease-in-out reverse;
+}
+.ola3 {
+  background: #142243;
+  height: 40%;
+  opacity: 0.7;
+  animation: olas 9s infinite ease-in-out;
+}
+
+@keyframes olas {
+  0%,
+  100% {
+    transform: translateX(0%) translateY(5px);
+    border-radius: 50% 45% 40% 45%;
+  }
+  25% {
+    transform: translateX(-10%) translateY(-10px);
+    border-radius: 60% 40% 45% 55%;
+  }
+  50% {
+    transform: translateX(10%) translateY(10px);
+    border-radius: 45% 50% 40% 45%;
+  }
+  75% {
+    transform: translateX(-10%) translateY(-5px);
+    border-radius: 60% 35% 55% 45%;
+  }
+}
+
+/* =========================== HEADER / Inicio ============================================= */
+
+header {
+  width: 96%;
+  padding: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 10;
+}
+
+header .logo h1 {
+  color: white;
+  font-size: 1.8rem;
+  margin: 0;
+}
+
+nav {
+  display: flex;
+  gap: 15px;
+}
+
+nav button {
+  display: inline-block;
+  padding: 10px 24px;
+  background-color: rgb(210, 210, 210);
+  color: black;
+  font-weight: bold;
+  text-transform: uppercase;
+  border: none;
+  transform: skewX(-15deg); /* paralelogramo */
+  position: relative;
+  cursor: pointer;
+  font-size: 16px;
+  box-shadow: 2px 2px 0px rgb(230, 222, 222), 
+  -2px -2px 0px rgb(218, 209, 209);
+  transition: all 0.3s ease;
+}
+
+nav button:hover {
+  background-color: orange; 
+  box-shadow: 7px 7px 0px white, 
+              -7px -7px 0px white;
+  transform: skewX(-15deg) translateY(-2px);
+}
+
+/* =========================== HEADER / Fin ============================================= */
+
+
+/* =========================== INICIO / Inicio ============================================= */
+
+
+
+
+
+
+/* =========================== INICIO / Fin ============================================= */
+
+
+
+/* Cards emergentes - Aparecen detrás de las olas */
+.card {
+  position: absolute;
+  bottom: -180px; 
+  left: 50%;
+  transform: translateX(-50%);
+  width: 260px;
+  background: white;
+  border-radius: 15px;
+  padding: 20px;
+  text-align: center;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+  opacity: 0;
+  transition: bottom 1.5s ease-out, opacity 1.5s ease-out;
+  z-index: -1; /* Card detrás de las olas */
+}
+
+
+/* Clase para hacer que la card suba */
+.card.visible {
+  bottom: 25%; /* Sube desde aca */
+  opacity: 1;
+  animation: flotacion 8s ease-in-out infinite;
+}
+
+/* Efecto de "flotación" */
+@keyframes flotacion {
+  0%, 100% {
+    transform: translateX(-50%) translateY(0);
+  }
+  50% {
+    transform: translateX(-50%) translateY(-3px);
+  }
+}
+
+/* =========================== ESTRELLAS / Inicio ============================================= */
+@keyframes estrellas {
+  0% { opacity: 0.3; }
+  50% { opacity: 1; }
+  100% { opacity: 0.3; }
+}
+
+.estrella {
+  position: absolute;
+  width: 2px;
+  height: 2px;
+  background: white;
+  border-radius: 50%;
+  opacity: 0.5;
+  animation: estrellas 2s infinite ease-in-out alternate;
+}
+/* =========================== ESTRELLAS / Fin ============================================= */
